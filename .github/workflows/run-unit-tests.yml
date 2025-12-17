@@ -1,0 +1,19 @@
+name: run unit tests
+
+on:
+  push:
+   branches:
+     'feature/*'
+
+jobs:
+  run-unit-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6.0.1
+
+      - name: run unit tests
+        run: mvn test
+     
+    
