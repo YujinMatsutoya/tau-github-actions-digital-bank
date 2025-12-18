@@ -16,6 +16,12 @@ jobs:
           run: mvn test
 
         - name: build
-          run: mvn
+          run: mvn -DskipTests -B package --no-transfer-progress --file ./pom.xml
+
+        - uses: actions/upload-artifact@v6.0.0
+          with:
+            name: digibank.war
+            path: ./target/*digibank*.war
+          
 
         
